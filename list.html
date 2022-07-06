@@ -2,9 +2,9 @@
 
 <h1>{{ .Title }}</h1>
 
-<ul>
 {{ range .Pages.ByPublishDate.Reverse }}
 
+<ul>
     <h3>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h3>
@@ -12,15 +12,14 @@
     
     {{ if gt (len .Summary) 0 }}
 
-      <li>
+    <li>
         
 
         <a href="{{ .RelPermalink }}">{{ .Summary | safeHTML | truncate 30 }}</a>
-      </li>
+    </li>
   {{ end }}
-
+</ul>
 
 {{ end }}
-</ul>
 
 {{ end }}
